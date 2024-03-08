@@ -12,9 +12,9 @@ public class RewindByKeyPress : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.R))                     //Change keycode for your own custom key if you want
+        if(TimeManip.ManupilatingTime())                     //Change keycode for your own custom key if you want
         {
-            rewindValue += rewindIntensity;                 //While holding the button, we will gradually rewind more and more time into the past
+            rewindValue += TimeManip.GetManipIntensity();                 //While holding the button, we will gradually rewind more and more time into the past
 
             if (!isRewinding)
             {
