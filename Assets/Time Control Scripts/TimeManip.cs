@@ -8,15 +8,37 @@ public class TimeManip : MonoBehaviour
     static float speed = 0;
     static int mode = 0;
 
+    public GameObject playerStatus;
+    public float rewindRate = 0.02f;
+    static float rewRate;
+
+    void Start()
+    {
+        rewRate = rewindRate;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     void FixedUpdate()
     {
-        mode = Input.GetKey(KeyCode.C) ? REWIND : Input.GetKey(KeyCode.V) ? PAUSE : NONE;
+        if(Input.GetKey(KeyCode.C)) // Rewind
+        {
+            mode = REWIND;
+            playerStatus.GetComponent<PlayerStatus>().LoseAura(0.1f);
+        }
+        else if (Input.GetKey(KeyCode.V)) // Pause
+        {
+            mode = PAUSE;
+        }
+        else
+        {
+            mode = NONE;
+        }
+
     }
 
     public static bool ManupilatingTime()
@@ -26,7 +48,7 @@ public class TimeManip : MonoBehaviour
 
     public static float GetManipIntensity()
     {
-        return mode == REWIND ? 0.02f : 0;
+        return mode == REWIND ? rewRate : 0;
     }
 
 
