@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     float xInput;
     float yInput;
 
-
+    public Time_faster faster;
+    public Time_slower slower;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,13 @@ public class PlayerMovement : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
+        
+        if(Input.GetKey(KeyCode.Q)){
+            slower.Slower();
+        }
+        if(Input.GetKey(KeyCode.E)){
+            faster.Faster();
+        }
     }
     void HandleXInput()
     {
