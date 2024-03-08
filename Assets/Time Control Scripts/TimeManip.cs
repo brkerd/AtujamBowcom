@@ -9,12 +9,24 @@ public class TimeManip : MonoBehaviour
     static int mode = 0;
 
     public GameObject playerStatus;
+
+    // Public parameters
     public float rewindRate = 0.02f;
+    public float auraLossAmountOnRewind = 0.1f;
+    public float auraLossAmountOnIdle = 0.001f;
+
+
+
     static float rewRate;
+
+    PlayerStatus playerStatusBehavior;
 
     void Start()
     {
         rewRate = rewindRate;
+        playerStatusBehavior = playerStatus.GetComponent<PlayerStatus>();
+
+        InvokeRepeating("loseAuraIdle", 1f, 1f);
     }
 
     // Update is called once per frame
@@ -25,10 +37,10 @@ public class TimeManip : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.C)) // Rewind
+        if(Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.V)) // Rewind
         {
             mode = REWIND;
-            playerStatus.GetComponent<PlayerStatus>().LoseAura(0.1f);
+            playerStatusBehavior.LoseAura(auraLossAmountOnRewind);
         }
         else if (Input.GetKey(KeyCode.V)) // Pause
         {
@@ -41,15 +53,12 @@ public class TimeManip : MonoBehaviour
 
     }
 
-    public static bool ManupilatingTime()
-    {
-        return mode == REWIND || mode == PAUSE;
+    public void loseAuraIdle() {
+        if (mode == NONE)
+            playerStatusBehavior.LoseAura(auraLossAmountOnIdle);
     }
 
-    public static float GetManipIntensity()
-    {
-        return mode == REWIND ? rewRate : 0;
-    }
+    public static bool ManupilatingTime() { return mode == REWIND || mode == PAUSE;}
 
-
+    public static float GetManipIntensity() { return mode == REWIND ? rewRate : 0; }
 }

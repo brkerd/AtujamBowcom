@@ -17,6 +17,7 @@ public class PlayerStatus : MonoBehaviour
     void Update()
     {
 
+        /*
         if (Input.GetKey(KeyCode.Backspace))
         {
             if (Input.GetKey(KeyCode.LeftShift)) LoseHealth(0.3f);
@@ -27,7 +28,7 @@ public class PlayerStatus : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift)) GainHealth(0.3f);
             else GainAura(0.5f);
         }
-
+        */
 
     }
 

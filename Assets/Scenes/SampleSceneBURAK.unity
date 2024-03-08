@@ -1392,6 +1392,37 @@ MonoBehaviour:
   maxGroundSpeed: 6
   jumpSpeed: 8
   grounded: 0
+--- !u!1 &1353568466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1353568467}
+  m_Layer: 0
+  m_Name: RewindInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1353568467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353568466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 42.917934, y: 14.153429, z: -4.6157665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698107718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,3 +2042,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 481356164}
   - {fileID: 1346978250}
+  - {fileID: 1353568467}
