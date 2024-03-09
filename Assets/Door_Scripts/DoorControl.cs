@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorControl : MonoBehaviour
 {
-    public ButtonControl buttonToListen;
+    public List<ButtonControl> buttonsToListen;
     public int maxHeight = 430;
     public float speed = 0.005f;
 
@@ -21,19 +21,23 @@ public class DoorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (buttonToListen.IsPressed() && position < maxHeight)
+        foreach(ButtonControl button in buttonsToListen)
         {
-            transform.position += move;
-            position++;
-        }
+            
+            if (button.IsPressed() && position < maxHeight)
+            {
+                Debug.Log("BootonXXXX");
+                transform.position += move;
+                position++;
+                break;
+            }
 
-        else if (!buttonToListen.IsPressed() && position > 0)
-        {
-            transform.position -= move;
-            position--;
+            else if (position > 0)
+            {
+                transform.position -= move;
+                position--;
+            }
         }
-
-        Debug.Log(position);
- 
+       
     }
 }
