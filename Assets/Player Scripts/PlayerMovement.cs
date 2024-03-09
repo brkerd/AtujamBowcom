@@ -18,15 +18,18 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded;
     public bool isFacingRight;
+    public Vector3 tpBack;
     float xInput;
     float yInput;
+    float startTime;
 
     public Time_faster faster;
     public Time_slower slower;
     // Start is called before the first frame update
     void Start()
     {
-
+        startTime = Time.time;
+        tpBack = transform.position;
     }
 
     // Update is called once per frame
@@ -34,6 +37,12 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
         HandleJump();
+
+        if(Time.time - startTime > 5){
+            Debug.Log(transform.position);
+            tpBack = transform.position;
+            startTime = Time.time;
+        }
     }
 
     void CheckInput()
@@ -46,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.E)){
             faster.Faster();
+        }
+        if(Input.GetKey(KeyCode.F)){
+            TeleportBack();
         }
     }
     void HandleXInput()
@@ -80,6 +92,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void TeleportBack(){
+        transform.position = tpBack;
+    }
+
     void FixedUpdate()
     {
         CheckGround();
@@ -107,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
     }
+
+
 
 
 }
