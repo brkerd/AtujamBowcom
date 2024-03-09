@@ -7,7 +7,7 @@ public class Time_slower : MonoBehaviour
     public float slowdownFactor = 0.05f;
     public float slowdownLength = 2f;
     
-      void Update()
+    void Update()
     {
        Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
        Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f); 

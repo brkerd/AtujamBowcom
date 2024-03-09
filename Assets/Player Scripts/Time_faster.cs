@@ -7,7 +7,7 @@ public class Time_faster : MonoBehaviour
     public float fasterFactor = 1.5f;
     public float fasterLength = 2f;
     
-      void Update()
+    void Update()
     {
        Time.timeScale += fasterLength * Time.unscaledDeltaTime;
        Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f); 
