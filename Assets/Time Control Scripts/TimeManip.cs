@@ -12,12 +12,15 @@ public class TimeManip : MonoBehaviour
 
     // Public parameters
     public float rewindRate = 0.02f;
-    public float auraLossAmountOnRewind = 0.1f;
+
+    public float auraLossAmountOnRewind = 0.01f;
     public float auraLossAmountOnIdle = 0.001f;
 
 
 
     static float rewRate;
+
+    int counter = 0; ///
 
     PlayerStatus playerStatusBehavior;
 
@@ -27,15 +30,12 @@ public class TimeManip : MonoBehaviour
         playerStatusBehavior = playerStatus.GetComponent<PlayerStatus>();
 
         InvokeRepeating("loseAuraIdle", 1f, 1f);
+        InvokeRepeating("clockFlag", 1f, 1f); ////////
     }
 
-    // Update is called once per frame
+
+
     void Update()
-    {
-      
-    }
-
-    void FixedUpdate()
     {
         if(Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.V)) // Rewind
         {
@@ -48,6 +48,10 @@ public class TimeManip : MonoBehaviour
         }
         else
         {
+            if (Input.GetKey(KeyCode.E)) // Faster
+            {
+                playerStatusBehavior.LoseAura(auraLossAmountOnRewind);
+            }
             mode = NONE;
         }
 
@@ -56,6 +60,11 @@ public class TimeManip : MonoBehaviour
     public void loseAuraIdle() {
         if (mode == NONE)
             playerStatusBehavior.LoseAura(auraLossAmountOnIdle);
+    }
+
+    public void clockFlag()
+    {
+        Debug.Log(auraLossAmountOnRewind );
     }
 
     public static bool ManupilatingTime() { return mode == REWIND || mode == PAUSE;}
