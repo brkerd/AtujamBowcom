@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
 
     public bool grounded;
+    public bool isFacingRight;
     float xInput;
     float yInput;
 
@@ -66,7 +67,17 @@ public class PlayerMovement : MonoBehaviour
     void FaceInput()
     {
         float direction = Mathf.Sign(xInput);
-        transform.localScale = new Vector3(-direction, 1, 1);
+        //transform.localScale = new Vector3(-direction, 1, 1);
+        if(direction == 1f){
+            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            isFacingRight = true;
+        }
+        if(direction == -1f){
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
+            isFacingRight = false;
+        }
     }
 
     void FixedUpdate()
@@ -77,15 +88,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void ApplyFriction()
-    {
-        // if (body.velocity.y != 0)
-        // {
-        //     Debug.Log(body.velocity.y);
-        // }
-        
-        if (grounded && xInput == 0 && (body.velocity.y <= 0f || body.velocity.y >= 0f))
+    {   
+        if (grounded && xInput == 0)
         {
-            body.velocity *= groundDecay;
+            body.velocity = new Vector2(body.velocity.x*groundDecay, body.velocity.y);
         }
     }
 
@@ -93,8 +99,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            float idleJump = body.velocity.y == 0 ? jumpSpeed / groundDecay : jumpSpeed;
-            body.velocity = new Vector2(body.velocity.x, idleJump);
+            body.velocity = new Vector2(body.velocity.x, jumpSpeed);
         }
     }
 
