@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         if (Mathf.Abs(xInput) > 0)
         {
             float increment = xInput * acceleration;
-            float factor = Input.GetKey(KeyCode.Q) ? 15f : 1;
+            float factor = 1;
 
 
             float newSpeed = Mathf.Clamp(body.velocity.x + increment, -maxGroundSpeed*factor, maxGroundSpeed*factor);
