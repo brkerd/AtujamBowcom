@@ -15,15 +15,22 @@ public class DoorControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        move = new Vector3(0, speed);
+        move = new Vector3(0, speed*3.5f);
+        InvokeRepeating("NewUpdate", 1f, Time.deltaTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach(ButtonControl button in buttonsToListen)
+        
+
+    }
+
+    void NewUpdate()
+    {
+        foreach (ButtonControl button in buttonsToListen)
         {
-            
+
             if (button.IsPressed() && position < maxHeight)
             {
                 transform.position += move;
@@ -38,6 +45,5 @@ public class DoorControl : MonoBehaviour
             transform.position -= move;
             position--;
         }
-
     }
 }
