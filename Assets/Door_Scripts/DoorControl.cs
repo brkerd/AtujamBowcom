@@ -26,18 +26,18 @@ public class DoorControl : MonoBehaviour
             
             if (button.IsPressed() && position < maxHeight)
             {
-                Debug.Log("BootonXXXX");
                 transform.position += move;
                 position++;
-                break;
-            }
-
-            else if (position > 0)
-            {
-                transform.position -= move;
-                position--;
+                return;
             }
         }
-       
+
+
+        if (position > 0)
+        {
+            transform.position -= move;
+            position--;
+        }
+
     }
 }
