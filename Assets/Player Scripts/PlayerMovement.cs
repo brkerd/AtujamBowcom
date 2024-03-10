@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D body;
     public BoxCollider2D groundCheck;
+    public Animator animator;
     public LayerMask groundMask;
 
     public float acceleration;
@@ -43,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
             tpBack = transform.position;
             startTime = Time.time;
         }
+
+        animator.SetFloat("Velocity",Mathf.Abs(body.velocity.x));
     }
 
     void CheckInput()
@@ -80,15 +83,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float direction = Mathf.Sign(xInput);
         //transform.localScale = new Vector3(-direction, 1, 1);
-        if(direction == 1f){
+        if(direction == -1f){
             Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = true;
+            isFacingRight = false;
         }
-        if(direction == -1f){
+        if(direction == 1f){
             Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
-            isFacingRight = false;
+            isFacingRight = true;
         }
     }
 

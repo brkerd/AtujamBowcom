@@ -37,7 +37,7 @@ public class TimeManip : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.C) && !Input.GetKey(KeyCode.V)) // Rewind
+        if(Input.GetKey(KeyCode.F) && !Input.GetKey(KeyCode.V)) // Rewind
         {
             mode = REWIND;
             playerStatusBehavior.LoseAura(auraLossAmountOnRewind);
