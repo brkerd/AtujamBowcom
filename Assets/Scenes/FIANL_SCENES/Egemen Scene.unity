@@ -15090,25 +15090,17 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 555817909850872171}
-    - target: {fileID: 3246847127660302411, guid: 485f64846c68945439c55ce47897c8fa, type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 3548337417480673754, guid: 485f64846c68945439c55ce47897c8fa, type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 5452439483438739489, guid: 485f64846c68945439c55ce47897c8fa, type: 3}
       propertyPath: m_Name
       value: 2DPCamera
       objectReference: {fileID: 0}
     - target: {fileID: 5513081798519049791, guid: 485f64846c68945439c55ce47897c8fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6386204
+      value: -10.762711
       objectReference: {fileID: 0}
     - target: {fileID: 6988653366558015850, guid: 485f64846c68945439c55ce47897c8fa, type: 3}
       propertyPath: field of view
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 8332781870064092942, guid: 485f64846c68945439c55ce47897c8fa, type: 3}
       propertyPath: m_LocalPosition.x
