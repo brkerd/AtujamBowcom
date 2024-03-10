@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerStatus : MonoBehaviour
 
     public Image healthbar;
     public float healthAmount = 100f;
+
+    public GameObject over;
 
 
 
@@ -32,17 +35,30 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    public void Start()
+    {
+        over.SetActive(false);
+    }
+
     public void LoseAura(float amount)
     {
         auraAmount -= amount;
         aurabar.fillAmount = auraAmount / 100f;
+
+        
+        if (auraAmount <= 0)
+        {
+            over.SetActive(true);
+            Invoke("ResetScene", 1f);
+        }
     }
 
     public void GainAura(float amount)
     {
         auraAmount += amount;
-        auraAmount = Mathf.Clamp(auraAmount, 0, 100f);
+        auraAmount = Mathf.Clamp(auraAmount, 0, 1f);
         aurabar.fillAmount = auraAmount / 100f;
+        
     }
 
 
@@ -50,12 +66,25 @@ public class PlayerStatus : MonoBehaviour
     {
         healthAmount -= amount;
         healthbar.fillAmount = healthAmount / 100f;
+
+        if (healthAmount <= 0)
+        {
+            over.SetActive(true);
+            Invoke("ResetScene", 1f);
+        }
     }
 
     public void GainHealth(float amount)
     {
         healthAmount += amount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100f);
+        healthAmount = Mathf.Clamp(healthAmount, 0, 1f);
         healthbar.fillAmount = healthAmount / 100f;
+    }
+
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }
