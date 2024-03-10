@@ -70,7 +70,10 @@ public class PlayerMovement : MonoBehaviour
         if (Mathf.Abs(xInput) > 0)
         {
             float increment = xInput * acceleration;
-            float newSpeed = Mathf.Clamp(body.velocity.x + increment, -maxGroundSpeed, maxGroundSpeed);
+            float factor = Input.GetKey(KeyCode.Q) ? 15f : 1;
+
+
+            float newSpeed = Mathf.Clamp(body.velocity.x + increment, -maxGroundSpeed*factor, maxGroundSpeed*factor);
             body.velocity = new Vector2(newSpeed, body.velocity.y);
 
             FaceInput();
