@@ -11,16 +11,34 @@ public class Weapon_enemy : MonoBehaviour
     public int interval = 3;
     private float time = 0f;
 
+    public bool canShoot = false;
+
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= interval)
+        if(time >= interval && canShoot)
         {
         time -= interval;
             Shoot();
         }
     }
-           
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            canShoot = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canShoot = false;
+        }
+    }
+
 
     void Shoot()
     {
