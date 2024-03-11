@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Aura : MonoBehaviour
+public class NextScene : MonoBehaviour
 {
-    public PlayerStatus playerStatus;
-
-    float auraAmount = 2f;
+    public string nextScene;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -21,10 +20,15 @@ public class Aura : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            playerStatus.GainAura(auraAmount);
-            gameObject.SetActive(false);
+            //Invoke("NextScene", 1f);
+            LoadNextScene();
         }
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(nextScene);
     }
 }

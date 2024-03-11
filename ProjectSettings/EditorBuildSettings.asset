@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FIANL_SCENES/Egemen Scene.unity
     guid: c1e84c433cb02af4eb9e67dd1c10125d
+  - enabled: 1
+    path: Assets/Scenes/FIANL_SCENES/SampleSceneIBRAHIM2.unity
+    guid: 3d894b296d2d8457591d915d0db8b7ab
+  - enabled: 1
+    path: Assets/Scenes/FIANL_SCENES/Finish.unity
+    guid: fd036f7f3a8944f66b2adf2af37ac7bf
   m_configObjects: {}

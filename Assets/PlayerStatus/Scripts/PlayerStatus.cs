@@ -57,8 +57,8 @@ public class PlayerStatus : MonoBehaviour
     {
         auraAmount += amount;
         auraAmount = Mathf.Clamp(auraAmount, 0, 1f);
-        aurabar.fillAmount = auraAmount / 100f;
-        
+        aurabar.fillAmount = auraAmount;
+
     }
 
 

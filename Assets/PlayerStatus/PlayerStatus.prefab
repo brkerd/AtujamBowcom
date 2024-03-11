@@ -357,7 +357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 44.79}
   m_SizeDelta: {x: 144.2, y: 101.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8455611886112781553
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 13966c82f1c288f459fb5355a16bb743, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be75dab84f7a95741a51309fdb090eb9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AURA
+  m_text: TIME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -924,6 +924,7 @@ MonoBehaviour:
   auraAmount: 100
   healthbar: {fileID: 5745700921321378607}
   healthAmount: 100
+  over: {fileID: 3016666730547859332}
 --- !u!1 &8171087723753650415
 GameObject:
   m_ObjectHideFlags: 0
