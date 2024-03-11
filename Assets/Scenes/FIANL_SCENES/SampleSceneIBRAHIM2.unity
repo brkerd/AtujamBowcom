@@ -8705,6 +8705,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6261033691906969193, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8940,6 +8944,10 @@ PrefabInstance:
     - target: {fileID: 3810879099219043547, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261033691906969193, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11215,6 +11223,10 @@ PrefabInstance:
     - target: {fileID: 3810879099219043547, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261033691906969193, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34431,6 +34443,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6261033691906969193, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34604,6 +34620,14 @@ CompositeCollider2D:
         Y: 30000000
       - X: 330000000
         Y: 30000000
+    - - X: 560000000
+        Y: 35000000
+      - X: 550000000
+        Y: 35000000
+      - X: 550000000
+        Y: 30000000
+      - X: 560000000
+        Y: 30000000
     - - X: 330000000
         Y: 15000000
       - X: 300000000
@@ -34611,6 +34635,14 @@ CompositeCollider2D:
       - X: 300000000
         Y: 10000000
       - X: 330000000
+        Y: 10000000
+    - - X: 560000000
+        Y: 15000000
+      - X: 550000000
+        Y: 15000000
+      - X: 550000000
+        Y: 10000000
+      - X: 560000000
         Y: 10000000
     - - X: 330000000
         Y: -5000000
@@ -34654,10 +34686,18 @@ CompositeCollider2D:
       - {x: 43.999973, y: 4}
       - {x: 41, y: 3.999971}
       - {x: 41.00003, y: 3}
+    - - {x: 55.99997, y: 3}
+      - {x: 55.99997, y: 3.5}
+      - {x: 55, y: 3.499971}
+      - {x: 55.000034, y: 3}
     - - {x: 32.999973, y: 3}
       - {x: 32.999973, y: 3.5}
       - {x: 30, y: 3.499971}
       - {x: 30.000029, y: 3}
+    - - {x: 55.99997, y: 1}
+      - {x: 55.99997, y: 1.5}
+      - {x: 55, y: 1.4999707}
+      - {x: 55.000034, y: 1}
     - - {x: 32.999973, y: 1}
       - {x: 32.999973, y: 1.5}
       - {x: 30, y: 1.4999707}
@@ -34934,6 +34974,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 55, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 30, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -34989,6 +35039,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 2
       m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 55, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -35052,7 +35112,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 66ad2ba15321c0a43888458fff9b6cf0, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: bbdc48a810a161a4e9a614585495367d, type: 2}
-  - m_RefCount: 21
+  - m_RefCount: 23
     m_Data: {fileID: 11400000, guid: 46bfb03e2903a2e419ef825d8009bf49, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -35065,7 +35125,7 @@ Tilemap:
     m_Data: {fileID: 1908831641, guid: 0b062cff1476e3a41a0f9b98b801b9f1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 471251534, guid: 0b062cff1476e3a41a0f9b98b801b9f1, type: 3}
-  - m_RefCount: 21
+  - m_RefCount: 23
     m_Data: {fileID: 34368026, guid: 0b062cff1476e3a41a0f9b98b801b9f1, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 2089020488, guid: 0b062cff1476e3a41a0f9b98b801b9f1, type: 3}
@@ -35074,7 +35134,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 895009606, guid: 0b062cff1476e3a41a0f9b98b801b9f1, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 28
+  - m_RefCount: 30
     m_Data:
       e00: 1
       e01: 0
@@ -35093,7 +35153,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 28
+  - m_RefCount: 30
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -35238,6 +35298,10 @@ PrefabInstance:
     - target: {fileID: 3810879099219043547, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261033691906969193, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35500,6 +35564,10 @@ PrefabInstance:
     - target: {fileID: 3810879099219043547, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261033691906969193, guid: 3ea51d01a3baf4c2ca17bf0c8683e241, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

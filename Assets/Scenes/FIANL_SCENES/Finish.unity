@@ -529,7 +529,7 @@ MonoBehaviour:
   m_text: "LEVEL DESIGN\nEgemen \xC7ankaya\nBurak Erdin\xE7\nIbrahim Kaan Bilir\n\nPROGRAMMING\nEgemen
     \xC7ankaya\nBurak Erdin\xE7\nIbrahim Kaan Bilir\n\nCHARACTER DESIGN\nMurat Baseren\nBurak
     Erdin\xE7\n\nBACKGROUND DESIGN\nMurat Baseren\n\nSpecial Thanks to Arif Eren
-    Dumanli and Tolga Vanlioglu\n\nSpecial thanks to Nero the Cat for his/her adorableness
+    Dumanli and Tolga Vanlioglu\n\nSpecial thanks to Nero the Cat for his adorableness
     and support <3\n\nMade by BOWCOM for ATUJAM Game Development Contest\n\nThanks
     for playing!!!"
   m_isRightToLeft: 0
@@ -607,6 +607,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151856854}
+  m_CullTransparentMesh: 1
+--- !u!1 &1153894096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1153894097}
+  - component: {fileID: 1153894099}
+  - component: {fileID: 1153894098}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1153894097
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153894096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1769630523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 559, y: 268}
+  m_SizeDelta: {x: 1150, y: 2048}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1153894098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153894096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1c2586c1df356c148a65feb9ab389cd1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1153894099
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153894096}
   m_CullTransparentMesh: 1
 --- !u!1 &1210843148
 GameObject:
@@ -1014,6 +1089,7 @@ RectTransform:
   - {fileID: 1210843149}
   - {fileID: 726771998}
   - {fileID: 794473562}
+  - {fileID: 1153894097}
   - {fileID: 1231700255}
   - {fileID: 1151856855}
   - {fileID: 1690969516}
